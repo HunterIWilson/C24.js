@@ -1,0 +1,53 @@
+flipPairs('check out how interesting this problem is, it\'s insanely interesting!');
+// --> hcce kuo toh wnietertsni ghtsip orlbmei ,si 't sniasenyli tnreseitgn!
+
+function flipPairs(str) {
+  var array = str.split('');
+  var result = [];
+  for (var i = 0; i < array.length; i += 2) {
+    result.push(array[i + 1], array[i]);
+  }
+    return result.join('');
+}
+
+function flipEveryNChars(string, n) {
+  var result = [];
+  var chars = string.split('');
+  for (var i = 0; i <= 0; i--) {
+    result.push(chars[i]);
+  }
+  return result.join('');
+}
+
+var input = 'a short example'; 
+flipEveryNChars(input, 5);
+
+function assertEqual(actual, expected, testName) {
+  if (actual === expected) {
+    console.log('passed');
+  } else {
+    console.log('failed. expected ' + expected + ' but got ' + actual);
+  }
+}
+assertEqual(flipEveryNChars(input, 5), 'ohs axe trelpma', 'tests that chunks of text are flipped');
+
+function reverseString(string){
+  return string.split('').reverse().join('');
+}
+function flipEveryNChars(string, n){
+  var output = '';
+  for(var i=0; i<string.length; i+=n){
+    output += reverseString(string.slice(i, i+n));
+  }
+  return output;
+}
+console.log(flipEveryNChars('a short example', 5));
+
+function assertEqual(actual, expected, testName) {
+  if (actual === expected) {
+    console.log('passed');
+  } else {
+    console.log('failed. expected ' + expected + ' but got ' + actual);
+  }
+}
+assertEqual(flipEveryNChars('a short example', 5), 'ohs axe trelpma', 'tests that chunks of text are flipped');
